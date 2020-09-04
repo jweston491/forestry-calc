@@ -1,0 +1,18 @@
+
+// @import "~bootstrap/scss/bootstrap";
+
+// .form-group {
+//     margin-bottom: 0;
+// }
+.fc-root {
+    @import "~bootstrap/scss/functions";
+    @import "~bootstrap/scss/variables";
+    @import "~bootstrap/scss/mixins";
+    @import "~bootstrap/scss/_alert.scss";
+    @import "~bootstrap/scss/_buttons.scss";
+    @import "~bootstrap/scss/_forms.scss";
+    @import "~bootstrap/scss/_grid.scss";
+    .form-group {
+            margin-bottom: 0;
+        }
+}
