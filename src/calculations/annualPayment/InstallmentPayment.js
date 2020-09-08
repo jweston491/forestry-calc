@@ -33,7 +33,7 @@ export const InstallmentPayment = () => {
                 calcResult( result );
             }}
             >
-                {({ errors, touched, isValidating }) => (
+                {({ errors, touched, resetForm, isValidating }) => (
                     <Container>
                         <Row>
                             <Col>
@@ -66,6 +66,8 @@ export const InstallmentPayment = () => {
                                     <Button type="submit">Calculate</Button>
                                     <br/><br/>
                                     <Result result={ result } />
+                                    <br/><br/>
+                                    <Button onClick={()=>{resetForm()}}>Reset Form</Button>
                                 </Form>
                             </Col>
                         </Row>

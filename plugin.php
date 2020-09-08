@@ -3,7 +3,7 @@
  * Plugin Name:       Forestry Calculations
  * Plugin URI:        https://github.com/jweston491/forestry-calc
  * Description:       Provides a series of formulas to calculate interest on various forestry/land values.
- * Version:           1.0
+ * Version:           1.1
  * Author:            Jake Weston
  * Author URI:        https://github.com/jweston491/forestry-calc
  * Text Domain:       forestry-calculator

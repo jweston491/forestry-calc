@@ -12,7 +12,7 @@ import 'App.scss'
 function App( { settings } ) {
     if ( !process.env.NODE_ENV || process.env.NODE_ENV === 'development' ) {
         // Debug specific calculations as needed
-        return <futureValue.TerminatingPeriodicSeries/>
+        return <netPresentValue.ForestValue/>
     } 
     else {
         switch (settings.formula) {

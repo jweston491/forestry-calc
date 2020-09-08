@@ -32,7 +32,7 @@ export const PerpetualAnnualSeries = () => {
                 result = calcResult( result )
             }}
             >
-                {({ errors, touched, isValidating }) => (
+                {({ errors, touched, resetForm, isValidating }) => (
                     <Container>
                         <Row>
                             <Col>
@@ -58,6 +58,8 @@ export const PerpetualAnnualSeries = () => {
                                     <Button type="submit">Calculate</Button>
                                     <br/><br/>
                                     <Result result={ result } />
+                                    <br/><br/>
+                                    <Button onClick={()=>{resetForm()}}>Reset Form</Button>
                                 </Form>
                             </Col>
                         </Row>

@@ -67,14 +67,13 @@ export const ForestValue = () => {
                 i : '5',
                 y0: '0',
                 f : '',
-                o : '',
-                hr: '',
+                o : '0',
                 yf: '',
                 o_cr: ''
             }}
             onSubmit={ ( values ) => {
                 
-                let { i, calcRows, sev, f, hr, yf, o, o_cr, result } = values
+                let { i, calcRows, sev, f, yf, o, o_cr, result } = values
 
                 //Convert entered value to an actual percent
                 i = i / 100
@@ -95,21 +94,21 @@ export const ForestValue = () => {
                         lineResult = a / ( Math.pow( ( 1 + i ), n ) )
  
                         rowValues.push(lineResult)
-                        console.log(rowValues)
+
                     } else {
                         let diff = rowValues.length - Object.keys(rows).length
-                        for(i=1;i<=diff;i++){
-                            rowValues.pop(i)
+                        for(let x=1;x<=diff;x++){
+                            rowValues.pop(x)
                         }
                     }
 
                 }
 
                 let sum = rowValues.reduce((a, b) => a + b, 0)
-
+                console.log(rowValues)
                 console.log(sum)
 
-                console.log(hr)
+                console.log(sev)
 
                 let costMulti = ("revenue" === o_cr ) ? 1 : -1
 
@@ -117,13 +116,14 @@ export const ForestValue = () => {
 
                 console.log(o)
 
+                console.log(i, calcRows, sev, f, yf, o, o_cr, sum )
+
                 result = sum + ( f / Math.pow( ( 1 + i ), yf ) ) + ( o * ( ( Math.pow( ( 1 + i ), yf ) - 1 ) / ( i * Math.pow( ( 1 + i ), yf ) ) ) ) + ( sev / Math.pow( ( 1 + i ), yf ) )
-                
 
                 calcResult(result);
             }}
             >
-                {({ errors, touched, isValidating }) => (
+                {({ errors, touched, resetForm, isValidating }) => (
                     <Container>
                         <Form>
                             {  
@@ -236,7 +236,7 @@ export const ForestValue = () => {
                                         component={ReactstrapInput}
                                         validate={validateCurrency}
                                     />
-                                    {errors.hr && touched.hr}
+                                    {errors.sev && touched.sev}
                                 </Col>
     
                             </Row>
@@ -263,6 +263,8 @@ export const ForestValue = () => {
                              <Button type="submit">Calculate</Button>
                              <br/><br/>
                              <Result result={ result } />
+                             <br/><br/>
+                            <Button onClick={()=>{resetForm()}}>Reset Form</Button>
                         </Form>
                     </Container>
                     

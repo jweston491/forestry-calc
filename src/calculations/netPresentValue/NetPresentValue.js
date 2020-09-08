@@ -95,8 +95,8 @@ export const NetPresentValue = () => {
                         console.log(rowValues)
                     } else {
                         let diff = rowValues.length - Object.keys(rows).length
-                        for(i=1;i<=diff;i++){
-                            rowValues.pop(i)
+                        for(let x=1;x<=diff;x++){
+                            rowValues.pop(x)
                         }
                         console.log(rows)
                     }
@@ -109,7 +109,7 @@ export const NetPresentValue = () => {
                 calcResult(result);
             }}
             >
-                {({ errors, touched, isValidating }) => (
+                {({ errors, touched, resetForm, isValidating }) => (
                     <Container>
                         <Form>
                             {  
@@ -189,6 +189,8 @@ export const NetPresentValue = () => {
                              <Button type="submit">Calculate</Button>
                              <br/><br/>
                              <Result result={ result } />
+                             <br/><br/>
+                            <Button onClick={()=>{resetForm()}}>Reset Form</Button>
                         </Form>
                     </Container>
                     

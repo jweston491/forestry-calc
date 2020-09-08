@@ -67,7 +67,7 @@ export const SoilExpectationValue = () => {
                 i : '5',
                 y0: '0',
                 f : '',
-                o : '',
+                o : '0',
                 hr: '',
                 yf: '',
                 o_cr: ''
@@ -98,8 +98,8 @@ export const SoilExpectationValue = () => {
                         console.log(rowValues)
                     } else {
                         let diff = rowValues.length - Object.keys(rows).length
-                        for(i=1;i<=diff;i++){
-                            rowValues.pop(i)
+                        for(let x=1;x<=diff;x++){
+                            rowValues.pop(x)
                         }
                     }
 
@@ -124,7 +124,7 @@ export const SoilExpectationValue = () => {
                 calcResult(result);
             }}
             >
-                {({ errors, touched, isValidating }) => (
+                {({ errors, touched, resetForm, isValidating }) => (
                     <Container>
                         <Form>
                             <Row className="d-flex align-items-end mb-4">
@@ -273,6 +273,8 @@ export const SoilExpectationValue = () => {
                              <Button type="submit">Calculate</Button>
                              <br/><br/>
                              <Result result={ result } />
+                             <br/><br/>
+                            <Button onClick={()=>{resetForm()}}>Reset Form</Button>
                         </Form>
                     </Container>
                     

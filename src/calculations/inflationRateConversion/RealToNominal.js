@@ -34,7 +34,7 @@ export const RealToNominal = () => {
                 calcResult( result );
             }}
             >
-                {() => (
+                {( { resetForm } ) => (
                     <Container>
                         <Row>
                             <Col>
@@ -63,6 +63,8 @@ export const RealToNominal = () => {
                                         result={ result }
                                         format={ 'percent' } 
                                     />
+                                    <br/><br/>
+                                    <Button onClick={()=>{resetForm()}}>Reset Form</Button>
                                 </Form>
                             </Col>
                         </Row>
