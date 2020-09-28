@@ -274,7 +274,7 @@ export const SoilExpectationValue = () => {
                              <br/><br/>
                              <Result result={ result } />
                              <br/><br/>
-                            <Button onClick={()=>{resetForm()}}>Reset Form</Button>
+                            <Button onClick={()=>{resetForm(); calcResult(0)}}>Reset Form</Button>
                         </Form>
                     </Container>
                     
